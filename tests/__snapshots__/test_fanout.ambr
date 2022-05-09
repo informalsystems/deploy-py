@@ -1,0 +1,2727 @@
+# name: test_with_params[10-1000]
+  {
+    "queue-fanout": {
+      "queues": {
+        "queue-0": {
+          "main": [
+            [
+              "balance",
+              [
+                "sink.0.main"
+              ],
+              [
+                "source-payload"
+              ]
+            ]
+          ]
+        },
+        "queue-1": {
+          "main": [
+            [
+              "balance",
+              [
+                "sink.0.main"
+              ],
+              [
+                "source-payload"
+              ]
+            ]
+          ]
+        },
+        "queue-2": {
+          "main": [
+            [
+              "balance",
+              [
+                "sink.0.main"
+              ],
+              [
+                "source-payload"
+              ]
+            ]
+          ]
+        },
+        "queue-3": {
+          "main": [
+            [
+              "balance",
+              [
+                "sink.0.main"
+              ],
+              [
+                "source-payload"
+              ]
+            ]
+          ]
+        },
+        "queue-4": {
+          "main": [
+            [
+              "balance",
+              [
+                "sink.0.main"
+              ],
+              [
+                "source-payload"
+              ]
+            ]
+          ]
+        },
+        "queue-5": {
+          "main": [
+            [
+              "balance",
+              [
+                "sink.0.main"
+              ],
+              [
+                "source-payload"
+              ]
+            ]
+          ]
+        },
+        "queue-6": {
+          "main": [
+            [
+              "balance",
+              [
+                "sink.0.main"
+              ],
+              [
+                "source-payload"
+              ]
+            ]
+          ]
+        },
+        "queue-7": {
+          "main": [
+            [
+              "balance",
+              [
+                "sink.0.main"
+              ],
+              [
+                "source-payload"
+              ]
+            ]
+          ]
+        },
+        "queue-8": {
+          "main": [
+            [
+              "balance",
+              [
+                "sink.0.main"
+              ],
+              [
+                "source-payload"
+              ]
+            ]
+          ]
+        },
+        "queue-9": {
+          "main": [
+            [
+              "balance",
+              [
+                "sink.0.main"
+              ],
+              [
+                "source-payload"
+              ]
+            ]
+          ]
+        }
+      },
+      "nodes": {
+        "source": {
+          "main": [
+            [
+              "fanout",
+              [
+                "queue-0.queue",
+                "queue-1.queue",
+                "queue-2.queue",
+                "queue-3.queue",
+                "queue-4.queue",
+                "queue-5.queue",
+                "queue-6.queue",
+                "queue-7.queue",
+                "queue-8.queue",
+                "queue-9.queue"
+              ],
+              [
+                "source-payload"
+              ]
+            ]
+          ]
+        },
+        "sink": {}
+      }
+    }
+  }
+# ---
+# name: test_with_params[10-100]
+  {
+    "queue-fanout": {
+      "queues": {
+        "queue-0": {
+          "main": [
+            [
+              "balance",
+              [
+                "sink.0.main"
+              ],
+              [
+                "source-payload"
+              ]
+            ]
+          ]
+        },
+        "queue-1": {
+          "main": [
+            [
+              "balance",
+              [
+                "sink.0.main"
+              ],
+              [
+                "source-payload"
+              ]
+            ]
+          ]
+        },
+        "queue-2": {
+          "main": [
+            [
+              "balance",
+              [
+                "sink.0.main"
+              ],
+              [
+                "source-payload"
+              ]
+            ]
+          ]
+        },
+        "queue-3": {
+          "main": [
+            [
+              "balance",
+              [
+                "sink.0.main"
+              ],
+              [
+                "source-payload"
+              ]
+            ]
+          ]
+        },
+        "queue-4": {
+          "main": [
+            [
+              "balance",
+              [
+                "sink.0.main"
+              ],
+              [
+                "source-payload"
+              ]
+            ]
+          ]
+        },
+        "queue-5": {
+          "main": [
+            [
+              "balance",
+              [
+                "sink.0.main"
+              ],
+              [
+                "source-payload"
+              ]
+            ]
+          ]
+        },
+        "queue-6": {
+          "main": [
+            [
+              "balance",
+              [
+                "sink.0.main"
+              ],
+              [
+                "source-payload"
+              ]
+            ]
+          ]
+        },
+        "queue-7": {
+          "main": [
+            [
+              "balance",
+              [
+                "sink.0.main"
+              ],
+              [
+                "source-payload"
+              ]
+            ]
+          ]
+        },
+        "queue-8": {
+          "main": [
+            [
+              "balance",
+              [
+                "sink.0.main"
+              ],
+              [
+                "source-payload"
+              ]
+            ]
+          ]
+        },
+        "queue-9": {
+          "main": [
+            [
+              "balance",
+              [
+                "sink.0.main"
+              ],
+              [
+                "source-payload"
+              ]
+            ]
+          ]
+        }
+      },
+      "nodes": {
+        "source": {
+          "main": [
+            [
+              "fanout",
+              [
+                "queue-0.queue",
+                "queue-1.queue",
+                "queue-2.queue",
+                "queue-3.queue",
+                "queue-4.queue",
+                "queue-5.queue",
+                "queue-6.queue",
+                "queue-7.queue",
+                "queue-8.queue",
+                "queue-9.queue"
+              ],
+              [
+                "source-payload"
+              ]
+            ]
+          ]
+        },
+        "sink": {}
+      }
+    }
+  }
+# ---
+# name: test_with_params[10-500]
+  {
+    "queue-fanout": {
+      "queues": {
+        "queue-0": {
+          "main": [
+            [
+              "balance",
+              [
+                "sink.0.main"
+              ],
+              [
+                "source-payload"
+              ]
+            ]
+          ]
+        },
+        "queue-1": {
+          "main": [
+            [
+              "balance",
+              [
+                "sink.0.main"
+              ],
+              [
+                "source-payload"
+              ]
+            ]
+          ]
+        },
+        "queue-2": {
+          "main": [
+            [
+              "balance",
+              [
+                "sink.0.main"
+              ],
+              [
+                "source-payload"
+              ]
+            ]
+          ]
+        },
+        "queue-3": {
+          "main": [
+            [
+              "balance",
+              [
+                "sink.0.main"
+              ],
+              [
+                "source-payload"
+              ]
+            ]
+          ]
+        },
+        "queue-4": {
+          "main": [
+            [
+              "balance",
+              [
+                "sink.0.main"
+              ],
+              [
+                "source-payload"
+              ]
+            ]
+          ]
+        },
+        "queue-5": {
+          "main": [
+            [
+              "balance",
+              [
+                "sink.0.main"
+              ],
+              [
+                "source-payload"
+              ]
+            ]
+          ]
+        },
+        "queue-6": {
+          "main": [
+            [
+              "balance",
+              [
+                "sink.0.main"
+              ],
+              [
+                "source-payload"
+              ]
+            ]
+          ]
+        },
+        "queue-7": {
+          "main": [
+            [
+              "balance",
+              [
+                "sink.0.main"
+              ],
+              [
+                "source-payload"
+              ]
+            ]
+          ]
+        },
+        "queue-8": {
+          "main": [
+            [
+              "balance",
+              [
+                "sink.0.main"
+              ],
+              [
+                "source-payload"
+              ]
+            ]
+          ]
+        },
+        "queue-9": {
+          "main": [
+            [
+              "balance",
+              [
+                "sink.0.main"
+              ],
+              [
+                "source-payload"
+              ]
+            ]
+          ]
+        }
+      },
+      "nodes": {
+        "source": {
+          "main": [
+            [
+              "fanout",
+              [
+                "queue-0.queue",
+                "queue-1.queue",
+                "queue-2.queue",
+                "queue-3.queue",
+                "queue-4.queue",
+                "queue-5.queue",
+                "queue-6.queue",
+                "queue-7.queue",
+                "queue-8.queue",
+                "queue-9.queue"
+              ],
+              [
+                "source-payload"
+              ]
+            ]
+          ]
+        },
+        "sink": {}
+      }
+    }
+  }
+# ---
+# name: test_with_params[20-1000]
+  {
+    "queue-fanout": {
+      "queues": {
+        "queue-0": {
+          "main": [
+            [
+              "balance",
+              [
+                "sink.0.main"
+              ],
+              [
+                "source-payload"
+              ]
+            ]
+          ]
+        },
+        "queue-1": {
+          "main": [
+            [
+              "balance",
+              [
+                "sink.0.main"
+              ],
+              [
+                "source-payload"
+              ]
+            ]
+          ]
+        },
+        "queue-2": {
+          "main": [
+            [
+              "balance",
+              [
+                "sink.0.main"
+              ],
+              [
+                "source-payload"
+              ]
+            ]
+          ]
+        },
+        "queue-3": {
+          "main": [
+            [
+              "balance",
+              [
+                "sink.0.main"
+              ],
+              [
+                "source-payload"
+              ]
+            ]
+          ]
+        },
+        "queue-4": {
+          "main": [
+            [
+              "balance",
+              [
+                "sink.0.main"
+              ],
+              [
+                "source-payload"
+              ]
+            ]
+          ]
+        },
+        "queue-5": {
+          "main": [
+            [
+              "balance",
+              [
+                "sink.0.main"
+              ],
+              [
+                "source-payload"
+              ]
+            ]
+          ]
+        },
+        "queue-6": {
+          "main": [
+            [
+              "balance",
+              [
+                "sink.0.main"
+              ],
+              [
+                "source-payload"
+              ]
+            ]
+          ]
+        },
+        "queue-7": {
+          "main": [
+            [
+              "balance",
+              [
+                "sink.0.main"
+              ],
+              [
+                "source-payload"
+              ]
+            ]
+          ]
+        },
+        "queue-8": {
+          "main": [
+            [
+              "balance",
+              [
+                "sink.0.main"
+              ],
+              [
+                "source-payload"
+              ]
+            ]
+          ]
+        },
+        "queue-9": {
+          "main": [
+            [
+              "balance",
+              [
+                "sink.0.main"
+              ],
+              [
+                "source-payload"
+              ]
+            ]
+          ]
+        },
+        "queue-10": {
+          "main": [
+            [
+              "balance",
+              [
+                "sink.0.main"
+              ],
+              [
+                "source-payload"
+              ]
+            ]
+          ]
+        },
+        "queue-11": {
+          "main": [
+            [
+              "balance",
+              [
+                "sink.0.main"
+              ],
+              [
+                "source-payload"
+              ]
+            ]
+          ]
+        },
+        "queue-12": {
+          "main": [
+            [
+              "balance",
+              [
+                "sink.0.main"
+              ],
+              [
+                "source-payload"
+              ]
+            ]
+          ]
+        },
+        "queue-13": {
+          "main": [
+            [
+              "balance",
+              [
+                "sink.0.main"
+              ],
+              [
+                "source-payload"
+              ]
+            ]
+          ]
+        },
+        "queue-14": {
+          "main": [
+            [
+              "balance",
+              [
+                "sink.0.main"
+              ],
+              [
+                "source-payload"
+              ]
+            ]
+          ]
+        },
+        "queue-15": {
+          "main": [
+            [
+              "balance",
+              [
+                "sink.0.main"
+              ],
+              [
+                "source-payload"
+              ]
+            ]
+          ]
+        },
+        "queue-16": {
+          "main": [
+            [
+              "balance",
+              [
+                "sink.0.main"
+              ],
+              [
+                "source-payload"
+              ]
+            ]
+          ]
+        },
+        "queue-17": {
+          "main": [
+            [
+              "balance",
+              [
+                "sink.0.main"
+              ],
+              [
+                "source-payload"
+              ]
+            ]
+          ]
+        },
+        "queue-18": {
+          "main": [
+            [
+              "balance",
+              [
+                "sink.0.main"
+              ],
+              [
+                "source-payload"
+              ]
+            ]
+          ]
+        },
+        "queue-19": {
+          "main": [
+            [
+              "balance",
+              [
+                "sink.0.main"
+              ],
+              [
+                "source-payload"
+              ]
+            ]
+          ]
+        }
+      },
+      "nodes": {
+        "source": {
+          "main": [
+            [
+              "fanout",
+              [
+                "queue-0.queue",
+                "queue-1.queue",
+                "queue-2.queue",
+                "queue-3.queue",
+                "queue-4.queue",
+                "queue-5.queue",
+                "queue-6.queue",
+                "queue-7.queue",
+                "queue-8.queue",
+                "queue-9.queue",
+                "queue-10.queue",
+                "queue-11.queue",
+                "queue-12.queue",
+                "queue-13.queue",
+                "queue-14.queue",
+                "queue-15.queue",
+                "queue-16.queue",
+                "queue-17.queue",
+                "queue-18.queue",
+                "queue-19.queue"
+              ],
+              [
+                "source-payload"
+              ]
+            ]
+          ]
+        },
+        "sink": {}
+      }
+    }
+  }
+# ---
+# name: test_with_params[20-100]
+  {
+    "queue-fanout": {
+      "queues": {
+        "queue-0": {
+          "main": [
+            [
+              "balance",
+              [
+                "sink.0.main"
+              ],
+              [
+                "source-payload"
+              ]
+            ]
+          ]
+        },
+        "queue-1": {
+          "main": [
+            [
+              "balance",
+              [
+                "sink.0.main"
+              ],
+              [
+                "source-payload"
+              ]
+            ]
+          ]
+        },
+        "queue-2": {
+          "main": [
+            [
+              "balance",
+              [
+                "sink.0.main"
+              ],
+              [
+                "source-payload"
+              ]
+            ]
+          ]
+        },
+        "queue-3": {
+          "main": [
+            [
+              "balance",
+              [
+                "sink.0.main"
+              ],
+              [
+                "source-payload"
+              ]
+            ]
+          ]
+        },
+        "queue-4": {
+          "main": [
+            [
+              "balance",
+              [
+                "sink.0.main"
+              ],
+              [
+                "source-payload"
+              ]
+            ]
+          ]
+        },
+        "queue-5": {
+          "main": [
+            [
+              "balance",
+              [
+                "sink.0.main"
+              ],
+              [
+                "source-payload"
+              ]
+            ]
+          ]
+        },
+        "queue-6": {
+          "main": [
+            [
+              "balance",
+              [
+                "sink.0.main"
+              ],
+              [
+                "source-payload"
+              ]
+            ]
+          ]
+        },
+        "queue-7": {
+          "main": [
+            [
+              "balance",
+              [
+                "sink.0.main"
+              ],
+              [
+                "source-payload"
+              ]
+            ]
+          ]
+        },
+        "queue-8": {
+          "main": [
+            [
+              "balance",
+              [
+                "sink.0.main"
+              ],
+              [
+                "source-payload"
+              ]
+            ]
+          ]
+        },
+        "queue-9": {
+          "main": [
+            [
+              "balance",
+              [
+                "sink.0.main"
+              ],
+              [
+                "source-payload"
+              ]
+            ]
+          ]
+        },
+        "queue-10": {
+          "main": [
+            [
+              "balance",
+              [
+                "sink.0.main"
+              ],
+              [
+                "source-payload"
+              ]
+            ]
+          ]
+        },
+        "queue-11": {
+          "main": [
+            [
+              "balance",
+              [
+                "sink.0.main"
+              ],
+              [
+                "source-payload"
+              ]
+            ]
+          ]
+        },
+        "queue-12": {
+          "main": [
+            [
+              "balance",
+              [
+                "sink.0.main"
+              ],
+              [
+                "source-payload"
+              ]
+            ]
+          ]
+        },
+        "queue-13": {
+          "main": [
+            [
+              "balance",
+              [
+                "sink.0.main"
+              ],
+              [
+                "source-payload"
+              ]
+            ]
+          ]
+        },
+        "queue-14": {
+          "main": [
+            [
+              "balance",
+              [
+                "sink.0.main"
+              ],
+              [
+                "source-payload"
+              ]
+            ]
+          ]
+        },
+        "queue-15": {
+          "main": [
+            [
+              "balance",
+              [
+                "sink.0.main"
+              ],
+              [
+                "source-payload"
+              ]
+            ]
+          ]
+        },
+        "queue-16": {
+          "main": [
+            [
+              "balance",
+              [
+                "sink.0.main"
+              ],
+              [
+                "source-payload"
+              ]
+            ]
+          ]
+        },
+        "queue-17": {
+          "main": [
+            [
+              "balance",
+              [
+                "sink.0.main"
+              ],
+              [
+                "source-payload"
+              ]
+            ]
+          ]
+        },
+        "queue-18": {
+          "main": [
+            [
+              "balance",
+              [
+                "sink.0.main"
+              ],
+              [
+                "source-payload"
+              ]
+            ]
+          ]
+        },
+        "queue-19": {
+          "main": [
+            [
+              "balance",
+              [
+                "sink.0.main"
+              ],
+              [
+                "source-payload"
+              ]
+            ]
+          ]
+        }
+      },
+      "nodes": {
+        "source": {
+          "main": [
+            [
+              "fanout",
+              [
+                "queue-0.queue",
+                "queue-1.queue",
+                "queue-2.queue",
+                "queue-3.queue",
+                "queue-4.queue",
+                "queue-5.queue",
+                "queue-6.queue",
+                "queue-7.queue",
+                "queue-8.queue",
+                "queue-9.queue",
+                "queue-10.queue",
+                "queue-11.queue",
+                "queue-12.queue",
+                "queue-13.queue",
+                "queue-14.queue",
+                "queue-15.queue",
+                "queue-16.queue",
+                "queue-17.queue",
+                "queue-18.queue",
+                "queue-19.queue"
+              ],
+              [
+                "source-payload"
+              ]
+            ]
+          ]
+        },
+        "sink": {}
+      }
+    }
+  }
+# ---
+# name: test_with_params[20-500]
+  {
+    "queue-fanout": {
+      "queues": {
+        "queue-0": {
+          "main": [
+            [
+              "balance",
+              [
+                "sink.0.main"
+              ],
+              [
+                "source-payload"
+              ]
+            ]
+          ]
+        },
+        "queue-1": {
+          "main": [
+            [
+              "balance",
+              [
+                "sink.0.main"
+              ],
+              [
+                "source-payload"
+              ]
+            ]
+          ]
+        },
+        "queue-2": {
+          "main": [
+            [
+              "balance",
+              [
+                "sink.0.main"
+              ],
+              [
+                "source-payload"
+              ]
+            ]
+          ]
+        },
+        "queue-3": {
+          "main": [
+            [
+              "balance",
+              [
+                "sink.0.main"
+              ],
+              [
+                "source-payload"
+              ]
+            ]
+          ]
+        },
+        "queue-4": {
+          "main": [
+            [
+              "balance",
+              [
+                "sink.0.main"
+              ],
+              [
+                "source-payload"
+              ]
+            ]
+          ]
+        },
+        "queue-5": {
+          "main": [
+            [
+              "balance",
+              [
+                "sink.0.main"
+              ],
+              [
+                "source-payload"
+              ]
+            ]
+          ]
+        },
+        "queue-6": {
+          "main": [
+            [
+              "balance",
+              [
+                "sink.0.main"
+              ],
+              [
+                "source-payload"
+              ]
+            ]
+          ]
+        },
+        "queue-7": {
+          "main": [
+            [
+              "balance",
+              [
+                "sink.0.main"
+              ],
+              [
+                "source-payload"
+              ]
+            ]
+          ]
+        },
+        "queue-8": {
+          "main": [
+            [
+              "balance",
+              [
+                "sink.0.main"
+              ],
+              [
+                "source-payload"
+              ]
+            ]
+          ]
+        },
+        "queue-9": {
+          "main": [
+            [
+              "balance",
+              [
+                "sink.0.main"
+              ],
+              [
+                "source-payload"
+              ]
+            ]
+          ]
+        },
+        "queue-10": {
+          "main": [
+            [
+              "balance",
+              [
+                "sink.0.main"
+              ],
+              [
+                "source-payload"
+              ]
+            ]
+          ]
+        },
+        "queue-11": {
+          "main": [
+            [
+              "balance",
+              [
+                "sink.0.main"
+              ],
+              [
+                "source-payload"
+              ]
+            ]
+          ]
+        },
+        "queue-12": {
+          "main": [
+            [
+              "balance",
+              [
+                "sink.0.main"
+              ],
+              [
+                "source-payload"
+              ]
+            ]
+          ]
+        },
+        "queue-13": {
+          "main": [
+            [
+              "balance",
+              [
+                "sink.0.main"
+              ],
+              [
+                "source-payload"
+              ]
+            ]
+          ]
+        },
+        "queue-14": {
+          "main": [
+            [
+              "balance",
+              [
+                "sink.0.main"
+              ],
+              [
+                "source-payload"
+              ]
+            ]
+          ]
+        },
+        "queue-15": {
+          "main": [
+            [
+              "balance",
+              [
+                "sink.0.main"
+              ],
+              [
+                "source-payload"
+              ]
+            ]
+          ]
+        },
+        "queue-16": {
+          "main": [
+            [
+              "balance",
+              [
+                "sink.0.main"
+              ],
+              [
+                "source-payload"
+              ]
+            ]
+          ]
+        },
+        "queue-17": {
+          "main": [
+            [
+              "balance",
+              [
+                "sink.0.main"
+              ],
+              [
+                "source-payload"
+              ]
+            ]
+          ]
+        },
+        "queue-18": {
+          "main": [
+            [
+              "balance",
+              [
+                "sink.0.main"
+              ],
+              [
+                "source-payload"
+              ]
+            ]
+          ]
+        },
+        "queue-19": {
+          "main": [
+            [
+              "balance",
+              [
+                "sink.0.main"
+              ],
+              [
+                "source-payload"
+              ]
+            ]
+          ]
+        }
+      },
+      "nodes": {
+        "source": {
+          "main": [
+            [
+              "fanout",
+              [
+                "queue-0.queue",
+                "queue-1.queue",
+                "queue-2.queue",
+                "queue-3.queue",
+                "queue-4.queue",
+                "queue-5.queue",
+                "queue-6.queue",
+                "queue-7.queue",
+                "queue-8.queue",
+                "queue-9.queue",
+                "queue-10.queue",
+                "queue-11.queue",
+                "queue-12.queue",
+                "queue-13.queue",
+                "queue-14.queue",
+                "queue-15.queue",
+                "queue-16.queue",
+                "queue-17.queue",
+                "queue-18.queue",
+                "queue-19.queue"
+              ],
+              [
+                "source-payload"
+              ]
+            ]
+          ]
+        },
+        "sink": {}
+      }
+    }
+  }
+# ---
+# name: test_with_params[30-1000]
+  {
+    "queue-fanout": {
+      "queues": {
+        "queue-0": {
+          "main": [
+            [
+              "balance",
+              [
+                "sink.0.main"
+              ],
+              [
+                "source-payload"
+              ]
+            ]
+          ]
+        },
+        "queue-1": {
+          "main": [
+            [
+              "balance",
+              [
+                "sink.0.main"
+              ],
+              [
+                "source-payload"
+              ]
+            ]
+          ]
+        },
+        "queue-2": {
+          "main": [
+            [
+              "balance",
+              [
+                "sink.0.main"
+              ],
+              [
+                "source-payload"
+              ]
+            ]
+          ]
+        },
+        "queue-3": {
+          "main": [
+            [
+              "balance",
+              [
+                "sink.0.main"
+              ],
+              [
+                "source-payload"
+              ]
+            ]
+          ]
+        },
+        "queue-4": {
+          "main": [
+            [
+              "balance",
+              [
+                "sink.0.main"
+              ],
+              [
+                "source-payload"
+              ]
+            ]
+          ]
+        },
+        "queue-5": {
+          "main": [
+            [
+              "balance",
+              [
+                "sink.0.main"
+              ],
+              [
+                "source-payload"
+              ]
+            ]
+          ]
+        },
+        "queue-6": {
+          "main": [
+            [
+              "balance",
+              [
+                "sink.0.main"
+              ],
+              [
+                "source-payload"
+              ]
+            ]
+          ]
+        },
+        "queue-7": {
+          "main": [
+            [
+              "balance",
+              [
+                "sink.0.main"
+              ],
+              [
+                "source-payload"
+              ]
+            ]
+          ]
+        },
+        "queue-8": {
+          "main": [
+            [
+              "balance",
+              [
+                "sink.0.main"
+              ],
+              [
+                "source-payload"
+              ]
+            ]
+          ]
+        },
+        "queue-9": {
+          "main": [
+            [
+              "balance",
+              [
+                "sink.0.main"
+              ],
+              [
+                "source-payload"
+              ]
+            ]
+          ]
+        },
+        "queue-10": {
+          "main": [
+            [
+              "balance",
+              [
+                "sink.0.main"
+              ],
+              [
+                "source-payload"
+              ]
+            ]
+          ]
+        },
+        "queue-11": {
+          "main": [
+            [
+              "balance",
+              [
+                "sink.0.main"
+              ],
+              [
+                "source-payload"
+              ]
+            ]
+          ]
+        },
+        "queue-12": {
+          "main": [
+            [
+              "balance",
+              [
+                "sink.0.main"
+              ],
+              [
+                "source-payload"
+              ]
+            ]
+          ]
+        },
+        "queue-13": {
+          "main": [
+            [
+              "balance",
+              [
+                "sink.0.main"
+              ],
+              [
+                "source-payload"
+              ]
+            ]
+          ]
+        },
+        "queue-14": {
+          "main": [
+            [
+              "balance",
+              [
+                "sink.0.main"
+              ],
+              [
+                "source-payload"
+              ]
+            ]
+          ]
+        },
+        "queue-15": {
+          "main": [
+            [
+              "balance",
+              [
+                "sink.0.main"
+              ],
+              [
+                "source-payload"
+              ]
+            ]
+          ]
+        },
+        "queue-16": {
+          "main": [
+            [
+              "balance",
+              [
+                "sink.0.main"
+              ],
+              [
+                "source-payload"
+              ]
+            ]
+          ]
+        },
+        "queue-17": {
+          "main": [
+            [
+              "balance",
+              [
+                "sink.0.main"
+              ],
+              [
+                "source-payload"
+              ]
+            ]
+          ]
+        },
+        "queue-18": {
+          "main": [
+            [
+              "balance",
+              [
+                "sink.0.main"
+              ],
+              [
+                "source-payload"
+              ]
+            ]
+          ]
+        },
+        "queue-19": {
+          "main": [
+            [
+              "balance",
+              [
+                "sink.0.main"
+              ],
+              [
+                "source-payload"
+              ]
+            ]
+          ]
+        },
+        "queue-20": {
+          "main": [
+            [
+              "balance",
+              [
+                "sink.0.main"
+              ],
+              [
+                "source-payload"
+              ]
+            ]
+          ]
+        },
+        "queue-21": {
+          "main": [
+            [
+              "balance",
+              [
+                "sink.0.main"
+              ],
+              [
+                "source-payload"
+              ]
+            ]
+          ]
+        },
+        "queue-22": {
+          "main": [
+            [
+              "balance",
+              [
+                "sink.0.main"
+              ],
+              [
+                "source-payload"
+              ]
+            ]
+          ]
+        },
+        "queue-23": {
+          "main": [
+            [
+              "balance",
+              [
+                "sink.0.main"
+              ],
+              [
+                "source-payload"
+              ]
+            ]
+          ]
+        },
+        "queue-24": {
+          "main": [
+            [
+              "balance",
+              [
+                "sink.0.main"
+              ],
+              [
+                "source-payload"
+              ]
+            ]
+          ]
+        },
+        "queue-25": {
+          "main": [
+            [
+              "balance",
+              [
+                "sink.0.main"
+              ],
+              [
+                "source-payload"
+              ]
+            ]
+          ]
+        },
+        "queue-26": {
+          "main": [
+            [
+              "balance",
+              [
+                "sink.0.main"
+              ],
+              [
+                "source-payload"
+              ]
+            ]
+          ]
+        },
+        "queue-27": {
+          "main": [
+            [
+              "balance",
+              [
+                "sink.0.main"
+              ],
+              [
+                "source-payload"
+              ]
+            ]
+          ]
+        },
+        "queue-28": {
+          "main": [
+            [
+              "balance",
+              [
+                "sink.0.main"
+              ],
+              [
+                "source-payload"
+              ]
+            ]
+          ]
+        },
+        "queue-29": {
+          "main": [
+            [
+              "balance",
+              [
+                "sink.0.main"
+              ],
+              [
+                "source-payload"
+              ]
+            ]
+          ]
+        }
+      },
+      "nodes": {
+        "source": {
+          "main": [
+            [
+              "fanout",
+              [
+                "queue-0.queue",
+                "queue-1.queue",
+                "queue-2.queue",
+                "queue-3.queue",
+                "queue-4.queue",
+                "queue-5.queue",
+                "queue-6.queue",
+                "queue-7.queue",
+                "queue-8.queue",
+                "queue-9.queue",
+                "queue-10.queue",
+                "queue-11.queue",
+                "queue-12.queue",
+                "queue-13.queue",
+                "queue-14.queue",
+                "queue-15.queue",
+                "queue-16.queue",
+                "queue-17.queue",
+                "queue-18.queue",
+                "queue-19.queue",
+                "queue-20.queue",
+                "queue-21.queue",
+                "queue-22.queue",
+                "queue-23.queue",
+                "queue-24.queue",
+                "queue-25.queue",
+                "queue-26.queue",
+                "queue-27.queue",
+                "queue-28.queue",
+                "queue-29.queue"
+              ],
+              [
+                "source-payload"
+              ]
+            ]
+          ]
+        },
+        "sink": {}
+      }
+    }
+  }
+# ---
+# name: test_with_params[30-100]
+  {
+    "queue-fanout": {
+      "queues": {
+        "queue-0": {
+          "main": [
+            [
+              "balance",
+              [
+                "sink.0.main"
+              ],
+              [
+                "source-payload"
+              ]
+            ]
+          ]
+        },
+        "queue-1": {
+          "main": [
+            [
+              "balance",
+              [
+                "sink.0.main"
+              ],
+              [
+                "source-payload"
+              ]
+            ]
+          ]
+        },
+        "queue-2": {
+          "main": [
+            [
+              "balance",
+              [
+                "sink.0.main"
+              ],
+              [
+                "source-payload"
+              ]
+            ]
+          ]
+        },
+        "queue-3": {
+          "main": [
+            [
+              "balance",
+              [
+                "sink.0.main"
+              ],
+              [
+                "source-payload"
+              ]
+            ]
+          ]
+        },
+        "queue-4": {
+          "main": [
+            [
+              "balance",
+              [
+                "sink.0.main"
+              ],
+              [
+                "source-payload"
+              ]
+            ]
+          ]
+        },
+        "queue-5": {
+          "main": [
+            [
+              "balance",
+              [
+                "sink.0.main"
+              ],
+              [
+                "source-payload"
+              ]
+            ]
+          ]
+        },
+        "queue-6": {
+          "main": [
+            [
+              "balance",
+              [
+                "sink.0.main"
+              ],
+              [
+                "source-payload"
+              ]
+            ]
+          ]
+        },
+        "queue-7": {
+          "main": [
+            [
+              "balance",
+              [
+                "sink.0.main"
+              ],
+              [
+                "source-payload"
+              ]
+            ]
+          ]
+        },
+        "queue-8": {
+          "main": [
+            [
+              "balance",
+              [
+                "sink.0.main"
+              ],
+              [
+                "source-payload"
+              ]
+            ]
+          ]
+        },
+        "queue-9": {
+          "main": [
+            [
+              "balance",
+              [
+                "sink.0.main"
+              ],
+              [
+                "source-payload"
+              ]
+            ]
+          ]
+        },
+        "queue-10": {
+          "main": [
+            [
+              "balance",
+              [
+                "sink.0.main"
+              ],
+              [
+                "source-payload"
+              ]
+            ]
+          ]
+        },
+        "queue-11": {
+          "main": [
+            [
+              "balance",
+              [
+                "sink.0.main"
+              ],
+              [
+                "source-payload"
+              ]
+            ]
+          ]
+        },
+        "queue-12": {
+          "main": [
+            [
+              "balance",
+              [
+                "sink.0.main"
+              ],
+              [
+                "source-payload"
+              ]
+            ]
+          ]
+        },
+        "queue-13": {
+          "main": [
+            [
+              "balance",
+              [
+                "sink.0.main"
+              ],
+              [
+                "source-payload"
+              ]
+            ]
+          ]
+        },
+        "queue-14": {
+          "main": [
+            [
+              "balance",
+              [
+                "sink.0.main"
+              ],
+              [
+                "source-payload"
+              ]
+            ]
+          ]
+        },
+        "queue-15": {
+          "main": [
+            [
+              "balance",
+              [
+                "sink.0.main"
+              ],
+              [
+                "source-payload"
+              ]
+            ]
+          ]
+        },
+        "queue-16": {
+          "main": [
+            [
+              "balance",
+              [
+                "sink.0.main"
+              ],
+              [
+                "source-payload"
+              ]
+            ]
+          ]
+        },
+        "queue-17": {
+          "main": [
+            [
+              "balance",
+              [
+                "sink.0.main"
+              ],
+              [
+                "source-payload"
+              ]
+            ]
+          ]
+        },
+        "queue-18": {
+          "main": [
+            [
+              "balance",
+              [
+                "sink.0.main"
+              ],
+              [
+                "source-payload"
+              ]
+            ]
+          ]
+        },
+        "queue-19": {
+          "main": [
+            [
+              "balance",
+              [
+                "sink.0.main"
+              ],
+              [
+                "source-payload"
+              ]
+            ]
+          ]
+        },
+        "queue-20": {
+          "main": [
+            [
+              "balance",
+              [
+                "sink.0.main"
+              ],
+              [
+                "source-payload"
+              ]
+            ]
+          ]
+        },
+        "queue-21": {
+          "main": [
+            [
+              "balance",
+              [
+                "sink.0.main"
+              ],
+              [
+                "source-payload"
+              ]
+            ]
+          ]
+        },
+        "queue-22": {
+          "main": [
+            [
+              "balance",
+              [
+                "sink.0.main"
+              ],
+              [
+                "source-payload"
+              ]
+            ]
+          ]
+        },
+        "queue-23": {
+          "main": [
+            [
+              "balance",
+              [
+                "sink.0.main"
+              ],
+              [
+                "source-payload"
+              ]
+            ]
+          ]
+        },
+        "queue-24": {
+          "main": [
+            [
+              "balance",
+              [
+                "sink.0.main"
+              ],
+              [
+                "source-payload"
+              ]
+            ]
+          ]
+        },
+        "queue-25": {
+          "main": [
+            [
+              "balance",
+              [
+                "sink.0.main"
+              ],
+              [
+                "source-payload"
+              ]
+            ]
+          ]
+        },
+        "queue-26": {
+          "main": [
+            [
+              "balance",
+              [
+                "sink.0.main"
+              ],
+              [
+                "source-payload"
+              ]
+            ]
+          ]
+        },
+        "queue-27": {
+          "main": [
+            [
+              "balance",
+              [
+                "sink.0.main"
+              ],
+              [
+                "source-payload"
+              ]
+            ]
+          ]
+        },
+        "queue-28": {
+          "main": [
+            [
+              "balance",
+              [
+                "sink.0.main"
+              ],
+              [
+                "source-payload"
+              ]
+            ]
+          ]
+        },
+        "queue-29": {
+          "main": [
+            [
+              "balance",
+              [
+                "sink.0.main"
+              ],
+              [
+                "source-payload"
+              ]
+            ]
+          ]
+        }
+      },
+      "nodes": {
+        "source": {
+          "main": [
+            [
+              "fanout",
+              [
+                "queue-0.queue",
+                "queue-1.queue",
+                "queue-2.queue",
+                "queue-3.queue",
+                "queue-4.queue",
+                "queue-5.queue",
+                "queue-6.queue",
+                "queue-7.queue",
+                "queue-8.queue",
+                "queue-9.queue",
+                "queue-10.queue",
+                "queue-11.queue",
+                "queue-12.queue",
+                "queue-13.queue",
+                "queue-14.queue",
+                "queue-15.queue",
+                "queue-16.queue",
+                "queue-17.queue",
+                "queue-18.queue",
+                "queue-19.queue",
+                "queue-20.queue",
+                "queue-21.queue",
+                "queue-22.queue",
+                "queue-23.queue",
+                "queue-24.queue",
+                "queue-25.queue",
+                "queue-26.queue",
+                "queue-27.queue",
+                "queue-28.queue",
+                "queue-29.queue"
+              ],
+              [
+                "source-payload"
+              ]
+            ]
+          ]
+        },
+        "sink": {}
+      }
+    }
+  }
+# ---
+# name: test_with_params[30-500]
+  {
+    "queue-fanout": {
+      "queues": {
+        "queue-0": {
+          "main": [
+            [
+              "balance",
+              [
+                "sink.0.main"
+              ],
+              [
+                "source-payload"
+              ]
+            ]
+          ]
+        },
+        "queue-1": {
+          "main": [
+            [
+              "balance",
+              [
+                "sink.0.main"
+              ],
+              [
+                "source-payload"
+              ]
+            ]
+          ]
+        },
+        "queue-2": {
+          "main": [
+            [
+              "balance",
+              [
+                "sink.0.main"
+              ],
+              [
+                "source-payload"
+              ]
+            ]
+          ]
+        },
+        "queue-3": {
+          "main": [
+            [
+              "balance",
+              [
+                "sink.0.main"
+              ],
+              [
+                "source-payload"
+              ]
+            ]
+          ]
+        },
+        "queue-4": {
+          "main": [
+            [
+              "balance",
+              [
+                "sink.0.main"
+              ],
+              [
+                "source-payload"
+              ]
+            ]
+          ]
+        },
+        "queue-5": {
+          "main": [
+            [
+              "balance",
+              [
+                "sink.0.main"
+              ],
+              [
+                "source-payload"
+              ]
+            ]
+          ]
+        },
+        "queue-6": {
+          "main": [
+            [
+              "balance",
+              [
+                "sink.0.main"
+              ],
+              [
+                "source-payload"
+              ]
+            ]
+          ]
+        },
+        "queue-7": {
+          "main": [
+            [
+              "balance",
+              [
+                "sink.0.main"
+              ],
+              [
+                "source-payload"
+              ]
+            ]
+          ]
+        },
+        "queue-8": {
+          "main": [
+            [
+              "balance",
+              [
+                "sink.0.main"
+              ],
+              [
+                "source-payload"
+              ]
+            ]
+          ]
+        },
+        "queue-9": {
+          "main": [
+            [
+              "balance",
+              [
+                "sink.0.main"
+              ],
+              [
+                "source-payload"
+              ]
+            ]
+          ]
+        },
+        "queue-10": {
+          "main": [
+            [
+              "balance",
+              [
+                "sink.0.main"
+              ],
+              [
+                "source-payload"
+              ]
+            ]
+          ]
+        },
+        "queue-11": {
+          "main": [
+            [
+              "balance",
+              [
+                "sink.0.main"
+              ],
+              [
+                "source-payload"
+              ]
+            ]
+          ]
+        },
+        "queue-12": {
+          "main": [
+            [
+              "balance",
+              [
+                "sink.0.main"
+              ],
+              [
+                "source-payload"
+              ]
+            ]
+          ]
+        },
+        "queue-13": {
+          "main": [
+            [
+              "balance",
+              [
+                "sink.0.main"
+              ],
+              [
+                "source-payload"
+              ]
+            ]
+          ]
+        },
+        "queue-14": {
+          "main": [
+            [
+              "balance",
+              [
+                "sink.0.main"
+              ],
+              [
+                "source-payload"
+              ]
+            ]
+          ]
+        },
+        "queue-15": {
+          "main": [
+            [
+              "balance",
+              [
+                "sink.0.main"
+              ],
+              [
+                "source-payload"
+              ]
+            ]
+          ]
+        },
+        "queue-16": {
+          "main": [
+            [
+              "balance",
+              [
+                "sink.0.main"
+              ],
+              [
+                "source-payload"
+              ]
+            ]
+          ]
+        },
+        "queue-17": {
+          "main": [
+            [
+              "balance",
+              [
+                "sink.0.main"
+              ],
+              [
+                "source-payload"
+              ]
+            ]
+          ]
+        },
+        "queue-18": {
+          "main": [
+            [
+              "balance",
+              [
+                "sink.0.main"
+              ],
+              [
+                "source-payload"
+              ]
+            ]
+          ]
+        },
+        "queue-19": {
+          "main": [
+            [
+              "balance",
+              [
+                "sink.0.main"
+              ],
+              [
+                "source-payload"
+              ]
+            ]
+          ]
+        },
+        "queue-20": {
+          "main": [
+            [
+              "balance",
+              [
+                "sink.0.main"
+              ],
+              [
+                "source-payload"
+              ]
+            ]
+          ]
+        },
+        "queue-21": {
+          "main": [
+            [
+              "balance",
+              [
+                "sink.0.main"
+              ],
+              [
+                "source-payload"
+              ]
+            ]
+          ]
+        },
+        "queue-22": {
+          "main": [
+            [
+              "balance",
+              [
+                "sink.0.main"
+              ],
+              [
+                "source-payload"
+              ]
+            ]
+          ]
+        },
+        "queue-23": {
+          "main": [
+            [
+              "balance",
+              [
+                "sink.0.main"
+              ],
+              [
+                "source-payload"
+              ]
+            ]
+          ]
+        },
+        "queue-24": {
+          "main": [
+            [
+              "balance",
+              [
+                "sink.0.main"
+              ],
+              [
+                "source-payload"
+              ]
+            ]
+          ]
+        },
+        "queue-25": {
+          "main": [
+            [
+              "balance",
+              [
+                "sink.0.main"
+              ],
+              [
+                "source-payload"
+              ]
+            ]
+          ]
+        },
+        "queue-26": {
+          "main": [
+            [
+              "balance",
+              [
+                "sink.0.main"
+              ],
+              [
+                "source-payload"
+              ]
+            ]
+          ]
+        },
+        "queue-27": {
+          "main": [
+            [
+              "balance",
+              [
+                "sink.0.main"
+              ],
+              [
+                "source-payload"
+              ]
+            ]
+          ]
+        },
+        "queue-28": {
+          "main": [
+            [
+              "balance",
+              [
+                "sink.0.main"
+              ],
+              [
+                "source-payload"
+              ]
+            ]
+          ]
+        },
+        "queue-29": {
+          "main": [
+            [
+              "balance",
+              [
+                "sink.0.main"
+              ],
+              [
+                "source-payload"
+              ]
+            ]
+          ]
+        }
+      },
+      "nodes": {
+        "source": {
+          "main": [
+            [
+              "fanout",
+              [
+                "queue-0.queue",
+                "queue-1.queue",
+                "queue-2.queue",
+                "queue-3.queue",
+                "queue-4.queue",
+                "queue-5.queue",
+                "queue-6.queue",
+                "queue-7.queue",
+                "queue-8.queue",
+                "queue-9.queue",
+                "queue-10.queue",
+                "queue-11.queue",
+                "queue-12.queue",
+                "queue-13.queue",
+                "queue-14.queue",
+                "queue-15.queue",
+                "queue-16.queue",
+                "queue-17.queue",
+                "queue-18.queue",
+                "queue-19.queue",
+                "queue-20.queue",
+                "queue-21.queue",
+                "queue-22.queue",
+                "queue-23.queue",
+                "queue-24.queue",
+                "queue-25.queue",
+                "queue-26.queue",
+                "queue-27.queue",
+                "queue-28.queue",
+                "queue-29.queue"
+              ],
+              [
+                "source-payload"
+              ]
+            ]
+          ]
+        },
+        "sink": {}
+      }
+    }
+  }
+# ---

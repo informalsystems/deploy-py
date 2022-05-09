@@ -1,0 +1,198 @@
+# name: test_with_params[1000-1000]
+  {
+    "parallel-controller": {
+      "nodes": {
+        "source": {
+          "main": [
+            [
+              "balance",
+              [
+                "apalache.0.main",
+                "apalache.1.main",
+                "apalache.2.main",
+                "apalache.3.main",
+                "apalache.4.main",
+                "apalache.5.main",
+                "apalache.6.main",
+                "apalache.7.main",
+                "apalache.8.main",
+                "apalache.9.main"
+              ],
+              [
+                "source-payload"
+              ]
+            ]
+          ]
+        },
+        "apalache": {
+          "scale": 10,
+          "main": [
+            [
+              "balance",
+              [
+                "sink.0.main"
+              ],
+              [
+                "apalache-result"
+              ]
+            ]
+          ]
+        },
+        "sink": {
+          "main": [
+            [
+              "fanout",
+              [
+                "apalache.0.main",
+                "apalache.1.main",
+                "apalache.2.main",
+                "apalache.3.main",
+                "apalache.4.main",
+                "apalache.5.main",
+                "apalache.6.main",
+                "apalache.7.main",
+                "apalache.8.main",
+                "apalache.9.main"
+              ],
+              [
+                "terminate"
+              ]
+            ]
+          ]
+        }
+      }
+    }
+  }
+# ---
+# name: test_with_params[1000-100]
+  {
+    "parallel-controller": {
+      "nodes": {
+        "source": {
+          "main": [
+            [
+              "balance",
+              [
+                "apalache.0.main",
+                "apalache.1.main",
+                "apalache.2.main",
+                "apalache.3.main",
+                "apalache.4.main",
+                "apalache.5.main",
+                "apalache.6.main",
+                "apalache.7.main",
+                "apalache.8.main",
+                "apalache.9.main"
+              ],
+              [
+                "source-payload"
+              ]
+            ]
+          ]
+        },
+        "apalache": {
+          "scale": 10,
+          "main": [
+            [
+              "balance",
+              [
+                "sink.0.main"
+              ],
+              [
+                "apalache-result"
+              ]
+            ]
+          ]
+        },
+        "sink": {
+          "main": [
+            [
+              "fanout",
+              [
+                "apalache.0.main",
+                "apalache.1.main",
+                "apalache.2.main",
+                "apalache.3.main",
+                "apalache.4.main",
+                "apalache.5.main",
+                "apalache.6.main",
+                "apalache.7.main",
+                "apalache.8.main",
+                "apalache.9.main"
+              ],
+              [
+                "terminate"
+              ]
+            ]
+          ]
+        }
+      }
+    }
+  }
+# ---
+# name: test_with_params[1000-500]
+  {
+    "parallel-controller": {
+      "nodes": {
+        "source": {
+          "main": [
+            [
+              "balance",
+              [
+                "apalache.0.main",
+                "apalache.1.main",
+                "apalache.2.main",
+                "apalache.3.main",
+                "apalache.4.main",
+                "apalache.5.main",
+                "apalache.6.main",
+                "apalache.7.main",
+                "apalache.8.main",
+                "apalache.9.main"
+              ],
+              [
+                "source-payload"
+              ]
+            ]
+          ]
+        },
+        "apalache": {
+          "scale": 10,
+          "main": [
+            [
+              "balance",
+              [
+                "sink.0.main"
+              ],
+              [
+                "apalache-result"
+              ]
+            ]
+          ]
+        },
+        "sink": {
+          "main": [
+            [
+              "fanout",
+              [
+                "apalache.0.main",
+                "apalache.1.main",
+                "apalache.2.main",
+                "apalache.3.main",
+                "apalache.4.main",
+                "apalache.5.main",
+                "apalache.6.main",
+                "apalache.7.main",
+                "apalache.8.main",
+                "apalache.9.main"
+              ],
+              [
+                "terminate"
+              ]
+            ]
+          ]
+        }
+      }
+    }
+  }
+# ---

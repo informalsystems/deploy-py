@@ -1,0 +1,2547 @@
+# name: test_with_params[1-10000-100-1000-1000]
+  {
+    "test-filter": {
+      "queues": {
+        "input": {
+          "main": [
+            [
+              "balance",
+              [
+                "tlc.0.main"
+              ],
+              [
+                "source-payload"
+              ]
+            ]
+          ]
+        },
+        "output": {
+          "main": [
+            [
+              "balance",
+              [
+                "sink.0.main"
+              ],
+              [
+                "tlc-result"
+              ]
+            ]
+          ]
+        }
+      },
+      "nodes": {
+        "source": {
+          "main": [
+            [
+              "balance",
+              [
+                "input.queue"
+              ],
+              [
+                "source-payload"
+              ]
+            ]
+          ]
+        },
+        "tlc": {
+          "main": [
+            [
+              "balance",
+              [
+                "filter.0.main"
+              ],
+              [
+                "tlc-result"
+              ]
+            ]
+          ]
+        },
+        "filter": {
+          "main": [
+            [
+              "balance",
+              [
+                "output.queue"
+              ],
+              [
+                "tlc-result"
+              ]
+            ]
+          ]
+        },
+        "sink": {
+          "main": [
+            [
+              "fanout",
+              [
+                "tlc.0.control",
+                "filter.0.control"
+              ],
+              [
+                "terminate"
+              ]
+            ]
+          ]
+        }
+      }
+    }
+  }
+# ---
+# name: test_with_params[1-10000-100-1000-100]
+  {
+    "test-filter": {
+      "queues": {
+        "input": {
+          "main": [
+            [
+              "balance",
+              [
+                "tlc.0.main"
+              ],
+              [
+                "source-payload"
+              ]
+            ]
+          ]
+        },
+        "output": {
+          "main": [
+            [
+              "balance",
+              [
+                "sink.0.main"
+              ],
+              [
+                "tlc-result"
+              ]
+            ]
+          ]
+        }
+      },
+      "nodes": {
+        "source": {
+          "main": [
+            [
+              "balance",
+              [
+                "input.queue"
+              ],
+              [
+                "source-payload"
+              ]
+            ]
+          ]
+        },
+        "tlc": {
+          "main": [
+            [
+              "balance",
+              [
+                "filter.0.main"
+              ],
+              [
+                "tlc-result"
+              ]
+            ]
+          ]
+        },
+        "filter": {
+          "main": [
+            [
+              "balance",
+              [
+                "output.queue"
+              ],
+              [
+                "tlc-result"
+              ]
+            ]
+          ]
+        },
+        "sink": {
+          "main": [
+            [
+              "fanout",
+              [
+                "tlc.0.control",
+                "filter.0.control"
+              ],
+              [
+                "terminate"
+              ]
+            ]
+          ]
+        }
+      }
+    }
+  }
+# ---
+# name: test_with_params[1-10000-100-1000-500]
+  {
+    "test-filter": {
+      "queues": {
+        "input": {
+          "main": [
+            [
+              "balance",
+              [
+                "tlc.0.main"
+              ],
+              [
+                "source-payload"
+              ]
+            ]
+          ]
+        },
+        "output": {
+          "main": [
+            [
+              "balance",
+              [
+                "sink.0.main"
+              ],
+              [
+                "tlc-result"
+              ]
+            ]
+          ]
+        }
+      },
+      "nodes": {
+        "source": {
+          "main": [
+            [
+              "balance",
+              [
+                "input.queue"
+              ],
+              [
+                "source-payload"
+              ]
+            ]
+          ]
+        },
+        "tlc": {
+          "main": [
+            [
+              "balance",
+              [
+                "filter.0.main"
+              ],
+              [
+                "tlc-result"
+              ]
+            ]
+          ]
+        },
+        "filter": {
+          "main": [
+            [
+              "balance",
+              [
+                "output.queue"
+              ],
+              [
+                "tlc-result"
+              ]
+            ]
+          ]
+        },
+        "sink": {
+          "main": [
+            [
+              "fanout",
+              [
+                "tlc.0.control",
+                "filter.0.control"
+              ],
+              [
+                "terminate"
+              ]
+            ]
+          ]
+        }
+      }
+    }
+  }
+# ---
+# name: test_with_params[1-10000-1000-1000-1000]
+  {
+    "test-filter": {
+      "queues": {
+        "input": {
+          "main": [
+            [
+              "balance",
+              [
+                "tlc.0.main"
+              ],
+              [
+                "source-payload"
+              ]
+            ]
+          ]
+        },
+        "output": {
+          "main": [
+            [
+              "balance",
+              [
+                "sink.0.main"
+              ],
+              [
+                "tlc-result"
+              ]
+            ]
+          ]
+        }
+      },
+      "nodes": {
+        "source": {
+          "main": [
+            [
+              "balance",
+              [
+                "input.queue"
+              ],
+              [
+                "source-payload"
+              ]
+            ]
+          ]
+        },
+        "tlc": {
+          "main": [
+            [
+              "balance",
+              [
+                "filter.0.main"
+              ],
+              [
+                "tlc-result"
+              ]
+            ]
+          ]
+        },
+        "filter": {
+          "main": [
+            [
+              "balance",
+              [
+                "output.queue"
+              ],
+              [
+                "tlc-result"
+              ]
+            ]
+          ]
+        },
+        "sink": {
+          "main": [
+            [
+              "fanout",
+              [
+                "tlc.0.control",
+                "filter.0.control"
+              ],
+              [
+                "terminate"
+              ]
+            ]
+          ]
+        }
+      }
+    }
+  }
+# ---
+# name: test_with_params[1-10000-1000-1000-100]
+  {
+    "test-filter": {
+      "queues": {
+        "input": {
+          "main": [
+            [
+              "balance",
+              [
+                "tlc.0.main"
+              ],
+              [
+                "source-payload"
+              ]
+            ]
+          ]
+        },
+        "output": {
+          "main": [
+            [
+              "balance",
+              [
+                "sink.0.main"
+              ],
+              [
+                "tlc-result"
+              ]
+            ]
+          ]
+        }
+      },
+      "nodes": {
+        "source": {
+          "main": [
+            [
+              "balance",
+              [
+                "input.queue"
+              ],
+              [
+                "source-payload"
+              ]
+            ]
+          ]
+        },
+        "tlc": {
+          "main": [
+            [
+              "balance",
+              [
+                "filter.0.main"
+              ],
+              [
+                "tlc-result"
+              ]
+            ]
+          ]
+        },
+        "filter": {
+          "main": [
+            [
+              "balance",
+              [
+                "output.queue"
+              ],
+              [
+                "tlc-result"
+              ]
+            ]
+          ]
+        },
+        "sink": {
+          "main": [
+            [
+              "fanout",
+              [
+                "tlc.0.control",
+                "filter.0.control"
+              ],
+              [
+                "terminate"
+              ]
+            ]
+          ]
+        }
+      }
+    }
+  }
+# ---
+# name: test_with_params[1-10000-1000-1000-500]
+  {
+    "test-filter": {
+      "queues": {
+        "input": {
+          "main": [
+            [
+              "balance",
+              [
+                "tlc.0.main"
+              ],
+              [
+                "source-payload"
+              ]
+            ]
+          ]
+        },
+        "output": {
+          "main": [
+            [
+              "balance",
+              [
+                "sink.0.main"
+              ],
+              [
+                "tlc-result"
+              ]
+            ]
+          ]
+        }
+      },
+      "nodes": {
+        "source": {
+          "main": [
+            [
+              "balance",
+              [
+                "input.queue"
+              ],
+              [
+                "source-payload"
+              ]
+            ]
+          ]
+        },
+        "tlc": {
+          "main": [
+            [
+              "balance",
+              [
+                "filter.0.main"
+              ],
+              [
+                "tlc-result"
+              ]
+            ]
+          ]
+        },
+        "filter": {
+          "main": [
+            [
+              "balance",
+              [
+                "output.queue"
+              ],
+              [
+                "tlc-result"
+              ]
+            ]
+          ]
+        },
+        "sink": {
+          "main": [
+            [
+              "fanout",
+              [
+                "tlc.0.control",
+                "filter.0.control"
+              ],
+              [
+                "terminate"
+              ]
+            ]
+          ]
+        }
+      }
+    }
+  }
+# ---
+# name: test_with_params[1-10000-500-1000-1000]
+  {
+    "test-filter": {
+      "queues": {
+        "input": {
+          "main": [
+            [
+              "balance",
+              [
+                "tlc.0.main"
+              ],
+              [
+                "source-payload"
+              ]
+            ]
+          ]
+        },
+        "output": {
+          "main": [
+            [
+              "balance",
+              [
+                "sink.0.main"
+              ],
+              [
+                "tlc-result"
+              ]
+            ]
+          ]
+        }
+      },
+      "nodes": {
+        "source": {
+          "main": [
+            [
+              "balance",
+              [
+                "input.queue"
+              ],
+              [
+                "source-payload"
+              ]
+            ]
+          ]
+        },
+        "tlc": {
+          "main": [
+            [
+              "balance",
+              [
+                "filter.0.main"
+              ],
+              [
+                "tlc-result"
+              ]
+            ]
+          ]
+        },
+        "filter": {
+          "main": [
+            [
+              "balance",
+              [
+                "output.queue"
+              ],
+              [
+                "tlc-result"
+              ]
+            ]
+          ]
+        },
+        "sink": {
+          "main": [
+            [
+              "fanout",
+              [
+                "tlc.0.control",
+                "filter.0.control"
+              ],
+              [
+                "terminate"
+              ]
+            ]
+          ]
+        }
+      }
+    }
+  }
+# ---
+# name: test_with_params[1-10000-500-1000-100]
+  {
+    "test-filter": {
+      "queues": {
+        "input": {
+          "main": [
+            [
+              "balance",
+              [
+                "tlc.0.main"
+              ],
+              [
+                "source-payload"
+              ]
+            ]
+          ]
+        },
+        "output": {
+          "main": [
+            [
+              "balance",
+              [
+                "sink.0.main"
+              ],
+              [
+                "tlc-result"
+              ]
+            ]
+          ]
+        }
+      },
+      "nodes": {
+        "source": {
+          "main": [
+            [
+              "balance",
+              [
+                "input.queue"
+              ],
+              [
+                "source-payload"
+              ]
+            ]
+          ]
+        },
+        "tlc": {
+          "main": [
+            [
+              "balance",
+              [
+                "filter.0.main"
+              ],
+              [
+                "tlc-result"
+              ]
+            ]
+          ]
+        },
+        "filter": {
+          "main": [
+            [
+              "balance",
+              [
+                "output.queue"
+              ],
+              [
+                "tlc-result"
+              ]
+            ]
+          ]
+        },
+        "sink": {
+          "main": [
+            [
+              "fanout",
+              [
+                "tlc.0.control",
+                "filter.0.control"
+              ],
+              [
+                "terminate"
+              ]
+            ]
+          ]
+        }
+      }
+    }
+  }
+# ---
+# name: test_with_params[1-10000-500-1000-500]
+  {
+    "test-filter": {
+      "queues": {
+        "input": {
+          "main": [
+            [
+              "balance",
+              [
+                "tlc.0.main"
+              ],
+              [
+                "source-payload"
+              ]
+            ]
+          ]
+        },
+        "output": {
+          "main": [
+            [
+              "balance",
+              [
+                "sink.0.main"
+              ],
+              [
+                "tlc-result"
+              ]
+            ]
+          ]
+        }
+      },
+      "nodes": {
+        "source": {
+          "main": [
+            [
+              "balance",
+              [
+                "input.queue"
+              ],
+              [
+                "source-payload"
+              ]
+            ]
+          ]
+        },
+        "tlc": {
+          "main": [
+            [
+              "balance",
+              [
+                "filter.0.main"
+              ],
+              [
+                "tlc-result"
+              ]
+            ]
+          ]
+        },
+        "filter": {
+          "main": [
+            [
+              "balance",
+              [
+                "output.queue"
+              ],
+              [
+                "tlc-result"
+              ]
+            ]
+          ]
+        },
+        "sink": {
+          "main": [
+            [
+              "fanout",
+              [
+                "tlc.0.control",
+                "filter.0.control"
+              ],
+              [
+                "terminate"
+              ]
+            ]
+          ]
+        }
+      }
+    }
+  }
+# ---
+# name: test_with_params[2-10000-100-1000-1000]
+  {
+    "test-filter": {
+      "queues": {
+        "input": {
+          "main": [
+            [
+              "balance",
+              [
+                "tlc.0.main",
+                "tlc.1.main"
+              ],
+              [
+                "source-payload"
+              ]
+            ]
+          ]
+        },
+        "output": {
+          "main": [
+            [
+              "balance",
+              [
+                "sink.0.main"
+              ],
+              [
+                "tlc-result"
+              ]
+            ]
+          ]
+        }
+      },
+      "nodes": {
+        "source": {
+          "main": [
+            [
+              "balance",
+              [
+                "input.queue"
+              ],
+              [
+                "source-payload"
+              ]
+            ]
+          ]
+        },
+        "tlc": {
+          "scale": 2,
+          "main": [
+            [
+              "balance",
+              [
+                "filter.0.main",
+                "filter.1.main"
+              ],
+              [
+                "tlc-result"
+              ]
+            ]
+          ]
+        },
+        "filter": {
+          "scale": 2,
+          "main": [
+            [
+              "balance",
+              [
+                "output.queue"
+              ],
+              [
+                "tlc-result"
+              ]
+            ]
+          ]
+        },
+        "sink": {
+          "main": [
+            [
+              "fanout",
+              [
+                "tlc.0.control",
+                "tlc.1.control",
+                "filter.0.control",
+                "filter.1.control"
+              ],
+              [
+                "terminate"
+              ]
+            ]
+          ]
+        }
+      }
+    }
+  }
+# ---
+# name: test_with_params[2-10000-100-1000-100]
+  {
+    "test-filter": {
+      "queues": {
+        "input": {
+          "main": [
+            [
+              "balance",
+              [
+                "tlc.0.main",
+                "tlc.1.main"
+              ],
+              [
+                "source-payload"
+              ]
+            ]
+          ]
+        },
+        "output": {
+          "main": [
+            [
+              "balance",
+              [
+                "sink.0.main"
+              ],
+              [
+                "tlc-result"
+              ]
+            ]
+          ]
+        }
+      },
+      "nodes": {
+        "source": {
+          "main": [
+            [
+              "balance",
+              [
+                "input.queue"
+              ],
+              [
+                "source-payload"
+              ]
+            ]
+          ]
+        },
+        "tlc": {
+          "scale": 2,
+          "main": [
+            [
+              "balance",
+              [
+                "filter.0.main",
+                "filter.1.main"
+              ],
+              [
+                "tlc-result"
+              ]
+            ]
+          ]
+        },
+        "filter": {
+          "scale": 2,
+          "main": [
+            [
+              "balance",
+              [
+                "output.queue"
+              ],
+              [
+                "tlc-result"
+              ]
+            ]
+          ]
+        },
+        "sink": {
+          "main": [
+            [
+              "fanout",
+              [
+                "tlc.0.control",
+                "tlc.1.control",
+                "filter.0.control",
+                "filter.1.control"
+              ],
+              [
+                "terminate"
+              ]
+            ]
+          ]
+        }
+      }
+    }
+  }
+# ---
+# name: test_with_params[2-10000-100-1000-500]
+  {
+    "test-filter": {
+      "queues": {
+        "input": {
+          "main": [
+            [
+              "balance",
+              [
+                "tlc.0.main",
+                "tlc.1.main"
+              ],
+              [
+                "source-payload"
+              ]
+            ]
+          ]
+        },
+        "output": {
+          "main": [
+            [
+              "balance",
+              [
+                "sink.0.main"
+              ],
+              [
+                "tlc-result"
+              ]
+            ]
+          ]
+        }
+      },
+      "nodes": {
+        "source": {
+          "main": [
+            [
+              "balance",
+              [
+                "input.queue"
+              ],
+              [
+                "source-payload"
+              ]
+            ]
+          ]
+        },
+        "tlc": {
+          "scale": 2,
+          "main": [
+            [
+              "balance",
+              [
+                "filter.0.main",
+                "filter.1.main"
+              ],
+              [
+                "tlc-result"
+              ]
+            ]
+          ]
+        },
+        "filter": {
+          "scale": 2,
+          "main": [
+            [
+              "balance",
+              [
+                "output.queue"
+              ],
+              [
+                "tlc-result"
+              ]
+            ]
+          ]
+        },
+        "sink": {
+          "main": [
+            [
+              "fanout",
+              [
+                "tlc.0.control",
+                "tlc.1.control",
+                "filter.0.control",
+                "filter.1.control"
+              ],
+              [
+                "terminate"
+              ]
+            ]
+          ]
+        }
+      }
+    }
+  }
+# ---
+# name: test_with_params[2-10000-1000-1000-1000]
+  {
+    "test-filter": {
+      "queues": {
+        "input": {
+          "main": [
+            [
+              "balance",
+              [
+                "tlc.0.main",
+                "tlc.1.main"
+              ],
+              [
+                "source-payload"
+              ]
+            ]
+          ]
+        },
+        "output": {
+          "main": [
+            [
+              "balance",
+              [
+                "sink.0.main"
+              ],
+              [
+                "tlc-result"
+              ]
+            ]
+          ]
+        }
+      },
+      "nodes": {
+        "source": {
+          "main": [
+            [
+              "balance",
+              [
+                "input.queue"
+              ],
+              [
+                "source-payload"
+              ]
+            ]
+          ]
+        },
+        "tlc": {
+          "scale": 2,
+          "main": [
+            [
+              "balance",
+              [
+                "filter.0.main",
+                "filter.1.main"
+              ],
+              [
+                "tlc-result"
+              ]
+            ]
+          ]
+        },
+        "filter": {
+          "scale": 2,
+          "main": [
+            [
+              "balance",
+              [
+                "output.queue"
+              ],
+              [
+                "tlc-result"
+              ]
+            ]
+          ]
+        },
+        "sink": {
+          "main": [
+            [
+              "fanout",
+              [
+                "tlc.0.control",
+                "tlc.1.control",
+                "filter.0.control",
+                "filter.1.control"
+              ],
+              [
+                "terminate"
+              ]
+            ]
+          ]
+        }
+      }
+    }
+  }
+# ---
+# name: test_with_params[2-10000-1000-1000-100]
+  {
+    "test-filter": {
+      "queues": {
+        "input": {
+          "main": [
+            [
+              "balance",
+              [
+                "tlc.0.main",
+                "tlc.1.main"
+              ],
+              [
+                "source-payload"
+              ]
+            ]
+          ]
+        },
+        "output": {
+          "main": [
+            [
+              "balance",
+              [
+                "sink.0.main"
+              ],
+              [
+                "tlc-result"
+              ]
+            ]
+          ]
+        }
+      },
+      "nodes": {
+        "source": {
+          "main": [
+            [
+              "balance",
+              [
+                "input.queue"
+              ],
+              [
+                "source-payload"
+              ]
+            ]
+          ]
+        },
+        "tlc": {
+          "scale": 2,
+          "main": [
+            [
+              "balance",
+              [
+                "filter.0.main",
+                "filter.1.main"
+              ],
+              [
+                "tlc-result"
+              ]
+            ]
+          ]
+        },
+        "filter": {
+          "scale": 2,
+          "main": [
+            [
+              "balance",
+              [
+                "output.queue"
+              ],
+              [
+                "tlc-result"
+              ]
+            ]
+          ]
+        },
+        "sink": {
+          "main": [
+            [
+              "fanout",
+              [
+                "tlc.0.control",
+                "tlc.1.control",
+                "filter.0.control",
+                "filter.1.control"
+              ],
+              [
+                "terminate"
+              ]
+            ]
+          ]
+        }
+      }
+    }
+  }
+# ---
+# name: test_with_params[2-10000-1000-1000-500]
+  {
+    "test-filter": {
+      "queues": {
+        "input": {
+          "main": [
+            [
+              "balance",
+              [
+                "tlc.0.main",
+                "tlc.1.main"
+              ],
+              [
+                "source-payload"
+              ]
+            ]
+          ]
+        },
+        "output": {
+          "main": [
+            [
+              "balance",
+              [
+                "sink.0.main"
+              ],
+              [
+                "tlc-result"
+              ]
+            ]
+          ]
+        }
+      },
+      "nodes": {
+        "source": {
+          "main": [
+            [
+              "balance",
+              [
+                "input.queue"
+              ],
+              [
+                "source-payload"
+              ]
+            ]
+          ]
+        },
+        "tlc": {
+          "scale": 2,
+          "main": [
+            [
+              "balance",
+              [
+                "filter.0.main",
+                "filter.1.main"
+              ],
+              [
+                "tlc-result"
+              ]
+            ]
+          ]
+        },
+        "filter": {
+          "scale": 2,
+          "main": [
+            [
+              "balance",
+              [
+                "output.queue"
+              ],
+              [
+                "tlc-result"
+              ]
+            ]
+          ]
+        },
+        "sink": {
+          "main": [
+            [
+              "fanout",
+              [
+                "tlc.0.control",
+                "tlc.1.control",
+                "filter.0.control",
+                "filter.1.control"
+              ],
+              [
+                "terminate"
+              ]
+            ]
+          ]
+        }
+      }
+    }
+  }
+# ---
+# name: test_with_params[2-10000-500-1000-1000]
+  {
+    "test-filter": {
+      "queues": {
+        "input": {
+          "main": [
+            [
+              "balance",
+              [
+                "tlc.0.main",
+                "tlc.1.main"
+              ],
+              [
+                "source-payload"
+              ]
+            ]
+          ]
+        },
+        "output": {
+          "main": [
+            [
+              "balance",
+              [
+                "sink.0.main"
+              ],
+              [
+                "tlc-result"
+              ]
+            ]
+          ]
+        }
+      },
+      "nodes": {
+        "source": {
+          "main": [
+            [
+              "balance",
+              [
+                "input.queue"
+              ],
+              [
+                "source-payload"
+              ]
+            ]
+          ]
+        },
+        "tlc": {
+          "scale": 2,
+          "main": [
+            [
+              "balance",
+              [
+                "filter.0.main",
+                "filter.1.main"
+              ],
+              [
+                "tlc-result"
+              ]
+            ]
+          ]
+        },
+        "filter": {
+          "scale": 2,
+          "main": [
+            [
+              "balance",
+              [
+                "output.queue"
+              ],
+              [
+                "tlc-result"
+              ]
+            ]
+          ]
+        },
+        "sink": {
+          "main": [
+            [
+              "fanout",
+              [
+                "tlc.0.control",
+                "tlc.1.control",
+                "filter.0.control",
+                "filter.1.control"
+              ],
+              [
+                "terminate"
+              ]
+            ]
+          ]
+        }
+      }
+    }
+  }
+# ---
+# name: test_with_params[2-10000-500-1000-100]
+  {
+    "test-filter": {
+      "queues": {
+        "input": {
+          "main": [
+            [
+              "balance",
+              [
+                "tlc.0.main",
+                "tlc.1.main"
+              ],
+              [
+                "source-payload"
+              ]
+            ]
+          ]
+        },
+        "output": {
+          "main": [
+            [
+              "balance",
+              [
+                "sink.0.main"
+              ],
+              [
+                "tlc-result"
+              ]
+            ]
+          ]
+        }
+      },
+      "nodes": {
+        "source": {
+          "main": [
+            [
+              "balance",
+              [
+                "input.queue"
+              ],
+              [
+                "source-payload"
+              ]
+            ]
+          ]
+        },
+        "tlc": {
+          "scale": 2,
+          "main": [
+            [
+              "balance",
+              [
+                "filter.0.main",
+                "filter.1.main"
+              ],
+              [
+                "tlc-result"
+              ]
+            ]
+          ]
+        },
+        "filter": {
+          "scale": 2,
+          "main": [
+            [
+              "balance",
+              [
+                "output.queue"
+              ],
+              [
+                "tlc-result"
+              ]
+            ]
+          ]
+        },
+        "sink": {
+          "main": [
+            [
+              "fanout",
+              [
+                "tlc.0.control",
+                "tlc.1.control",
+                "filter.0.control",
+                "filter.1.control"
+              ],
+              [
+                "terminate"
+              ]
+            ]
+          ]
+        }
+      }
+    }
+  }
+# ---
+# name: test_with_params[2-10000-500-1000-500]
+  {
+    "test-filter": {
+      "queues": {
+        "input": {
+          "main": [
+            [
+              "balance",
+              [
+                "tlc.0.main",
+                "tlc.1.main"
+              ],
+              [
+                "source-payload"
+              ]
+            ]
+          ]
+        },
+        "output": {
+          "main": [
+            [
+              "balance",
+              [
+                "sink.0.main"
+              ],
+              [
+                "tlc-result"
+              ]
+            ]
+          ]
+        }
+      },
+      "nodes": {
+        "source": {
+          "main": [
+            [
+              "balance",
+              [
+                "input.queue"
+              ],
+              [
+                "source-payload"
+              ]
+            ]
+          ]
+        },
+        "tlc": {
+          "scale": 2,
+          "main": [
+            [
+              "balance",
+              [
+                "filter.0.main",
+                "filter.1.main"
+              ],
+              [
+                "tlc-result"
+              ]
+            ]
+          ]
+        },
+        "filter": {
+          "scale": 2,
+          "main": [
+            [
+              "balance",
+              [
+                "output.queue"
+              ],
+              [
+                "tlc-result"
+              ]
+            ]
+          ]
+        },
+        "sink": {
+          "main": [
+            [
+              "fanout",
+              [
+                "tlc.0.control",
+                "tlc.1.control",
+                "filter.0.control",
+                "filter.1.control"
+              ],
+              [
+                "terminate"
+              ]
+            ]
+          ]
+        }
+      }
+    }
+  }
+# ---
+# name: test_with_params[3-10000-100-1000-1000]
+  {
+    "test-filter": {
+      "queues": {
+        "input": {
+          "main": [
+            [
+              "balance",
+              [
+                "tlc.0.main",
+                "tlc.1.main",
+                "tlc.2.main"
+              ],
+              [
+                "source-payload"
+              ]
+            ]
+          ]
+        },
+        "output": {
+          "main": [
+            [
+              "balance",
+              [
+                "sink.0.main"
+              ],
+              [
+                "tlc-result"
+              ]
+            ]
+          ]
+        }
+      },
+      "nodes": {
+        "source": {
+          "main": [
+            [
+              "balance",
+              [
+                "input.queue"
+              ],
+              [
+                "source-payload"
+              ]
+            ]
+          ]
+        },
+        "tlc": {
+          "scale": 3,
+          "main": [
+            [
+              "balance",
+              [
+                "filter.0.main",
+                "filter.1.main",
+                "filter.2.main"
+              ],
+              [
+                "tlc-result"
+              ]
+            ]
+          ]
+        },
+        "filter": {
+          "scale": 3,
+          "main": [
+            [
+              "balance",
+              [
+                "output.queue"
+              ],
+              [
+                "tlc-result"
+              ]
+            ]
+          ]
+        },
+        "sink": {
+          "main": [
+            [
+              "fanout",
+              [
+                "tlc.0.control",
+                "tlc.1.control",
+                "tlc.2.control",
+                "filter.0.control",
+                "filter.1.control",
+                "filter.2.control"
+              ],
+              [
+                "terminate"
+              ]
+            ]
+          ]
+        }
+      }
+    }
+  }
+# ---
+# name: test_with_params[3-10000-100-1000-100]
+  {
+    "test-filter": {
+      "queues": {
+        "input": {
+          "main": [
+            [
+              "balance",
+              [
+                "tlc.0.main",
+                "tlc.1.main",
+                "tlc.2.main"
+              ],
+              [
+                "source-payload"
+              ]
+            ]
+          ]
+        },
+        "output": {
+          "main": [
+            [
+              "balance",
+              [
+                "sink.0.main"
+              ],
+              [
+                "tlc-result"
+              ]
+            ]
+          ]
+        }
+      },
+      "nodes": {
+        "source": {
+          "main": [
+            [
+              "balance",
+              [
+                "input.queue"
+              ],
+              [
+                "source-payload"
+              ]
+            ]
+          ]
+        },
+        "tlc": {
+          "scale": 3,
+          "main": [
+            [
+              "balance",
+              [
+                "filter.0.main",
+                "filter.1.main",
+                "filter.2.main"
+              ],
+              [
+                "tlc-result"
+              ]
+            ]
+          ]
+        },
+        "filter": {
+          "scale": 3,
+          "main": [
+            [
+              "balance",
+              [
+                "output.queue"
+              ],
+              [
+                "tlc-result"
+              ]
+            ]
+          ]
+        },
+        "sink": {
+          "main": [
+            [
+              "fanout",
+              [
+                "tlc.0.control",
+                "tlc.1.control",
+                "tlc.2.control",
+                "filter.0.control",
+                "filter.1.control",
+                "filter.2.control"
+              ],
+              [
+                "terminate"
+              ]
+            ]
+          ]
+        }
+      }
+    }
+  }
+# ---
+# name: test_with_params[3-10000-100-1000-500]
+  {
+    "test-filter": {
+      "queues": {
+        "input": {
+          "main": [
+            [
+              "balance",
+              [
+                "tlc.0.main",
+                "tlc.1.main",
+                "tlc.2.main"
+              ],
+              [
+                "source-payload"
+              ]
+            ]
+          ]
+        },
+        "output": {
+          "main": [
+            [
+              "balance",
+              [
+                "sink.0.main"
+              ],
+              [
+                "tlc-result"
+              ]
+            ]
+          ]
+        }
+      },
+      "nodes": {
+        "source": {
+          "main": [
+            [
+              "balance",
+              [
+                "input.queue"
+              ],
+              [
+                "source-payload"
+              ]
+            ]
+          ]
+        },
+        "tlc": {
+          "scale": 3,
+          "main": [
+            [
+              "balance",
+              [
+                "filter.0.main",
+                "filter.1.main",
+                "filter.2.main"
+              ],
+              [
+                "tlc-result"
+              ]
+            ]
+          ]
+        },
+        "filter": {
+          "scale": 3,
+          "main": [
+            [
+              "balance",
+              [
+                "output.queue"
+              ],
+              [
+                "tlc-result"
+              ]
+            ]
+          ]
+        },
+        "sink": {
+          "main": [
+            [
+              "fanout",
+              [
+                "tlc.0.control",
+                "tlc.1.control",
+                "tlc.2.control",
+                "filter.0.control",
+                "filter.1.control",
+                "filter.2.control"
+              ],
+              [
+                "terminate"
+              ]
+            ]
+          ]
+        }
+      }
+    }
+  }
+# ---
+# name: test_with_params[3-10000-1000-1000-1000]
+  {
+    "test-filter": {
+      "queues": {
+        "input": {
+          "main": [
+            [
+              "balance",
+              [
+                "tlc.0.main",
+                "tlc.1.main",
+                "tlc.2.main"
+              ],
+              [
+                "source-payload"
+              ]
+            ]
+          ]
+        },
+        "output": {
+          "main": [
+            [
+              "balance",
+              [
+                "sink.0.main"
+              ],
+              [
+                "tlc-result"
+              ]
+            ]
+          ]
+        }
+      },
+      "nodes": {
+        "source": {
+          "main": [
+            [
+              "balance",
+              [
+                "input.queue"
+              ],
+              [
+                "source-payload"
+              ]
+            ]
+          ]
+        },
+        "tlc": {
+          "scale": 3,
+          "main": [
+            [
+              "balance",
+              [
+                "filter.0.main",
+                "filter.1.main",
+                "filter.2.main"
+              ],
+              [
+                "tlc-result"
+              ]
+            ]
+          ]
+        },
+        "filter": {
+          "scale": 3,
+          "main": [
+            [
+              "balance",
+              [
+                "output.queue"
+              ],
+              [
+                "tlc-result"
+              ]
+            ]
+          ]
+        },
+        "sink": {
+          "main": [
+            [
+              "fanout",
+              [
+                "tlc.0.control",
+                "tlc.1.control",
+                "tlc.2.control",
+                "filter.0.control",
+                "filter.1.control",
+                "filter.2.control"
+              ],
+              [
+                "terminate"
+              ]
+            ]
+          ]
+        }
+      }
+    }
+  }
+# ---
+# name: test_with_params[3-10000-1000-1000-100]
+  {
+    "test-filter": {
+      "queues": {
+        "input": {
+          "main": [
+            [
+              "balance",
+              [
+                "tlc.0.main",
+                "tlc.1.main",
+                "tlc.2.main"
+              ],
+              [
+                "source-payload"
+              ]
+            ]
+          ]
+        },
+        "output": {
+          "main": [
+            [
+              "balance",
+              [
+                "sink.0.main"
+              ],
+              [
+                "tlc-result"
+              ]
+            ]
+          ]
+        }
+      },
+      "nodes": {
+        "source": {
+          "main": [
+            [
+              "balance",
+              [
+                "input.queue"
+              ],
+              [
+                "source-payload"
+              ]
+            ]
+          ]
+        },
+        "tlc": {
+          "scale": 3,
+          "main": [
+            [
+              "balance",
+              [
+                "filter.0.main",
+                "filter.1.main",
+                "filter.2.main"
+              ],
+              [
+                "tlc-result"
+              ]
+            ]
+          ]
+        },
+        "filter": {
+          "scale": 3,
+          "main": [
+            [
+              "balance",
+              [
+                "output.queue"
+              ],
+              [
+                "tlc-result"
+              ]
+            ]
+          ]
+        },
+        "sink": {
+          "main": [
+            [
+              "fanout",
+              [
+                "tlc.0.control",
+                "tlc.1.control",
+                "tlc.2.control",
+                "filter.0.control",
+                "filter.1.control",
+                "filter.2.control"
+              ],
+              [
+                "terminate"
+              ]
+            ]
+          ]
+        }
+      }
+    }
+  }
+# ---
+# name: test_with_params[3-10000-1000-1000-500]
+  {
+    "test-filter": {
+      "queues": {
+        "input": {
+          "main": [
+            [
+              "balance",
+              [
+                "tlc.0.main",
+                "tlc.1.main",
+                "tlc.2.main"
+              ],
+              [
+                "source-payload"
+              ]
+            ]
+          ]
+        },
+        "output": {
+          "main": [
+            [
+              "balance",
+              [
+                "sink.0.main"
+              ],
+              [
+                "tlc-result"
+              ]
+            ]
+          ]
+        }
+      },
+      "nodes": {
+        "source": {
+          "main": [
+            [
+              "balance",
+              [
+                "input.queue"
+              ],
+              [
+                "source-payload"
+              ]
+            ]
+          ]
+        },
+        "tlc": {
+          "scale": 3,
+          "main": [
+            [
+              "balance",
+              [
+                "filter.0.main",
+                "filter.1.main",
+                "filter.2.main"
+              ],
+              [
+                "tlc-result"
+              ]
+            ]
+          ]
+        },
+        "filter": {
+          "scale": 3,
+          "main": [
+            [
+              "balance",
+              [
+                "output.queue"
+              ],
+              [
+                "tlc-result"
+              ]
+            ]
+          ]
+        },
+        "sink": {
+          "main": [
+            [
+              "fanout",
+              [
+                "tlc.0.control",
+                "tlc.1.control",
+                "tlc.2.control",
+                "filter.0.control",
+                "filter.1.control",
+                "filter.2.control"
+              ],
+              [
+                "terminate"
+              ]
+            ]
+          ]
+        }
+      }
+    }
+  }
+# ---
+# name: test_with_params[3-10000-500-1000-1000]
+  {
+    "test-filter": {
+      "queues": {
+        "input": {
+          "main": [
+            [
+              "balance",
+              [
+                "tlc.0.main",
+                "tlc.1.main",
+                "tlc.2.main"
+              ],
+              [
+                "source-payload"
+              ]
+            ]
+          ]
+        },
+        "output": {
+          "main": [
+            [
+              "balance",
+              [
+                "sink.0.main"
+              ],
+              [
+                "tlc-result"
+              ]
+            ]
+          ]
+        }
+      },
+      "nodes": {
+        "source": {
+          "main": [
+            [
+              "balance",
+              [
+                "input.queue"
+              ],
+              [
+                "source-payload"
+              ]
+            ]
+          ]
+        },
+        "tlc": {
+          "scale": 3,
+          "main": [
+            [
+              "balance",
+              [
+                "filter.0.main",
+                "filter.1.main",
+                "filter.2.main"
+              ],
+              [
+                "tlc-result"
+              ]
+            ]
+          ]
+        },
+        "filter": {
+          "scale": 3,
+          "main": [
+            [
+              "balance",
+              [
+                "output.queue"
+              ],
+              [
+                "tlc-result"
+              ]
+            ]
+          ]
+        },
+        "sink": {
+          "main": [
+            [
+              "fanout",
+              [
+                "tlc.0.control",
+                "tlc.1.control",
+                "tlc.2.control",
+                "filter.0.control",
+                "filter.1.control",
+                "filter.2.control"
+              ],
+              [
+                "terminate"
+              ]
+            ]
+          ]
+        }
+      }
+    }
+  }
+# ---
+# name: test_with_params[3-10000-500-1000-100]
+  {
+    "test-filter": {
+      "queues": {
+        "input": {
+          "main": [
+            [
+              "balance",
+              [
+                "tlc.0.main",
+                "tlc.1.main",
+                "tlc.2.main"
+              ],
+              [
+                "source-payload"
+              ]
+            ]
+          ]
+        },
+        "output": {
+          "main": [
+            [
+              "balance",
+              [
+                "sink.0.main"
+              ],
+              [
+                "tlc-result"
+              ]
+            ]
+          ]
+        }
+      },
+      "nodes": {
+        "source": {
+          "main": [
+            [
+              "balance",
+              [
+                "input.queue"
+              ],
+              [
+                "source-payload"
+              ]
+            ]
+          ]
+        },
+        "tlc": {
+          "scale": 3,
+          "main": [
+            [
+              "balance",
+              [
+                "filter.0.main",
+                "filter.1.main",
+                "filter.2.main"
+              ],
+              [
+                "tlc-result"
+              ]
+            ]
+          ]
+        },
+        "filter": {
+          "scale": 3,
+          "main": [
+            [
+              "balance",
+              [
+                "output.queue"
+              ],
+              [
+                "tlc-result"
+              ]
+            ]
+          ]
+        },
+        "sink": {
+          "main": [
+            [
+              "fanout",
+              [
+                "tlc.0.control",
+                "tlc.1.control",
+                "tlc.2.control",
+                "filter.0.control",
+                "filter.1.control",
+                "filter.2.control"
+              ],
+              [
+                "terminate"
+              ]
+            ]
+          ]
+        }
+      }
+    }
+  }
+# ---
+# name: test_with_params[3-10000-500-1000-500]
+  {
+    "test-filter": {
+      "queues": {
+        "input": {
+          "main": [
+            [
+              "balance",
+              [
+                "tlc.0.main",
+                "tlc.1.main",
+                "tlc.2.main"
+              ],
+              [
+                "source-payload"
+              ]
+            ]
+          ]
+        },
+        "output": {
+          "main": [
+            [
+              "balance",
+              [
+                "sink.0.main"
+              ],
+              [
+                "tlc-result"
+              ]
+            ]
+          ]
+        }
+      },
+      "nodes": {
+        "source": {
+          "main": [
+            [
+              "balance",
+              [
+                "input.queue"
+              ],
+              [
+                "source-payload"
+              ]
+            ]
+          ]
+        },
+        "tlc": {
+          "scale": 3,
+          "main": [
+            [
+              "balance",
+              [
+                "filter.0.main",
+                "filter.1.main",
+                "filter.2.main"
+              ],
+              [
+                "tlc-result"
+              ]
+            ]
+          ]
+        },
+        "filter": {
+          "scale": 3,
+          "main": [
+            [
+              "balance",
+              [
+                "output.queue"
+              ],
+              [
+                "tlc-result"
+              ]
+            ]
+          ]
+        },
+        "sink": {
+          "main": [
+            [
+              "fanout",
+              [
+                "tlc.0.control",
+                "tlc.1.control",
+                "tlc.2.control",
+                "filter.0.control",
+                "filter.1.control",
+                "filter.2.control"
+              ],
+              [
+                "terminate"
+              ]
+            ]
+          ]
+        }
+      }
+    }
+  }
+# ---

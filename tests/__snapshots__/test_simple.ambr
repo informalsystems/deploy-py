@@ -1,0 +1,22 @@
+# name: test
+  {
+    "simple": {
+      "nodes": {
+        "source": {
+          "main": [
+            [
+              "balance",
+              [
+                "sink.0.main"
+              ],
+              [
+                "*"
+              ]
+            ]
+          ]
+        },
+        "sink": {}
+      }
+    }
+  }
+# ---
