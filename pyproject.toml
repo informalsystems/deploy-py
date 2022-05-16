@@ -8,6 +8,7 @@ license = "Apache"
 [tool.poetry.dependencies]
 python = "^3.10"
 typing-extensions = "^4.2.0"
+iconnect = {git = "git@github.com:informalsystems/connect-py", rev = "rano/package"}
 
 [tool.poetry.dev-dependencies]
 pytest = "^7.1.2"
