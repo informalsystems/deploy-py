@@ -5,19 +5,19 @@
 """
 
 from abc import ABC, abstractmethod
-from concurrent.futures import ThreadPoolExecutor, ProcessPoolExecutor
 from dataclasses import dataclass
 from enum import Enum
 import json
-from multiprocessing import Pipe
+from multiprocessing import Pipe  # , Process
+from threading import Thread as Process
 from multiprocessing.connection import Connection
+from threading import Thread
 import time
 from typing import Dict, Final, List, Optional, Type, TypeVar, Tuple
-import concurrent.futures
 from typing_extensions import Self
 import logging
 
-from ifdeploy.connect import Connect
+from iconnect.network import Network, SendPort, RecvPort
 
 TopologyId = str
 NodeGroupId = str
@@ -50,17 +50,26 @@ class Program(ABC):
     _in_port: Final[str] = "in"
     _out_port: Final[str] = "out"
 
-    def __init__(self, name: ProgramId, parent_channel: Connection):
+    _iconn_recv_port: RecvPort
+    _iconn_send_port: SendPort
+
+    def __init__(self, network: Network, name: ProgramId, parent_channel: Connection):
         """Initialize the Program.
 
         Args:
             name (ProgramId): Name or Id of the program.
             parent_channel (Node): Channel to parent of this Program.
         """
+        self.network = network
         self.name: ProgramId = name
         self.parent_channel: Connection = parent_channel
         self.out_connections: List[Program.OutConnection] = []
         self.in_connections: List[Program.InConnection] = []
+
+        self._iconn_recv_port = self.network.add_recv_port(self._port_id(self._in_port))
+        self._iconn_send_port = self.network.add_send_port(
+            self._port_id(self._out_port)
+        )
 
         self._is_terminated: bool = False
 
@@ -97,6 +106,11 @@ class Program(ABC):
             others (List[]): Other programs to connect.
             msg_tags (List[MsgTag], optional): Enables message tag filtering. Defaults to any tags.
         """
+        match distribution:
+            case Distribution.balance:
+                self._iconn_send_port.balance([o._iconn_recv_port for o in others])
+            case Distribution.fanout:
+                self._iconn_send_port.fanout([o._iconn_recv_port for o in others])
         self.out_connections.append((distribution, others, msg_tags))
         for other in others:
             other.in_connections.append((distribution, self, msg_tags))
@@ -104,7 +118,7 @@ class Program(ABC):
     def is_source(self) -> bool:
         return len(self.in_connections) == 0
 
-    def run(self, ifconn_in, ifconn_out, *, poll_interval: float):
+    def run(self, *, poll_interval: float):
         """Run the program in a loop, unless the node is a root node.
 
         This one is called inside Informal.connect.init_thread
@@ -112,33 +126,33 @@ class Program(ABC):
         Args:
             poll_interval (float): Poll interval for the running program.
         """
+        self.network.sync([self._iconn_recv_port, self._iconn_send_port])
+
         if self.is_source():
-            self.program(None, Msg("source", 0, {}))
+            self.program(self._iconn_send_port, Msg("source", 0, {}))
         else:
-            pending = set()
+            thread = None
             while True:
                 self.recv_from_parent()
                 if self.is_terminated():
                     break
-                msg = ifconn_in.recv()
+                msg = self._iconn_recv_port.recv()
                 if msg:
-                    with ThreadPoolExecutor(max_workers=1) as executor:
-                        pending = {executor.submit(self.program, ifconn_out, msg)}
-                        while True:
-                            _, pending = concurrent.futures.wait(
-                                pending,
-                                timeout=poll_interval,
-                                return_when=concurrent.futures.FIRST_COMPLETED,
-                            )
-                            if not pending:
-                                break
-                            self.recv_from_parent()
-                            if self.is_terminated():
-                                break
-            for p in pending:
-                p.cancel()
-        ifconn_in.close()
-        ifconn_out.close()
+                    thread = Thread(
+                        target=self.program, args=(self._iconn_send_port, msg)
+                    )
+                    thread.start()
+                    while True:
+                        thread.join(poll_interval)
+                        if not thread.is_alive():
+                            break
+                        self.recv_from_parent()
+                        if self.is_terminated():
+                            break
+            # no way to stop a thread
+            if thread is not None:
+                thread.join()
+        self._iconn_send_port.close()
 
     def recv_from_parent(self):
         """Poll for control command from parent_channel"""
@@ -169,8 +183,7 @@ class QueueProgram(Program):
 
     def program(self, ifconn_out, msg: Msg):
         logging.info(
-            "[QUEU]",
-            f"{self.name} - relaying {msg.tag}",
+            f"[QUEU] {self.name} - relaying {msg.tag}",
         )
         # pass any incoming messages to its default out port.
         ifconn_out.send(self._port_id(self._out_port), msg)
@@ -196,6 +209,7 @@ class Node:
 
     def __init__(
         self,
+        network: Network,
         name: NodeId,
         seq: Tuple[int, int],
         *,
@@ -205,12 +219,13 @@ class Node:
         """Initialize the instance of this class .
 
         Args:
-            cls (Type): A Middleware devided class type
+            network (Network): A network
             name (NodeId): Name for this Node
             seq (int): Sequence id for this node for its parent node group
             program (Type[P], optional): A Program derived class type - the main program of the node. Defaults to `QueueProgram`.
             control (Type[P], optional): A Program derived class type - the control program of the node. Defaults to `ControlProgram`.
         """
+        self.network = network
         self.name = name
         self.seq: int = seq[0]
         self.scale: int = seq[1]
@@ -220,19 +235,21 @@ class Node:
         parent_channel_main, child_channel_main = Pipe()
         if main:
             parent_channel_control, child_channel_control = Pipe()
-            self.main = main(f"{name}.{self.seq}.main", child_channel_main)
+            self.main = main(
+                self.network, f"{name}.{self.seq}.main", child_channel_main
+            )
             if control:
                 self.control = control(
-                    f"{name}.{self.seq}.control", child_channel_control
+                    self.network, f"{name}.{self.seq}.control", child_channel_control
                 )
             else:
                 self.control = ControlProgram(
-                    f"{name}.{self.seq}.control", child_channel_control
+                    self.network, f"{name}.{self.seq}.control", child_channel_control
                 )
             self.children_channel.append(parent_channel_main)
             self.children_channel.append(parent_channel_control)
         else:
-            self.main = QueueProgram(f"{name}.queue", child_channel_main)
+            self.main = QueueProgram(self.network, f"{name}.queue", child_channel_main)
             self.control = None
 
     def add_connectionn(
@@ -266,29 +283,27 @@ class Node:
         Args:
             poll_interval (float): Poll interval for the running processes.
         """
-        with ThreadPoolExecutor(max_workers=3) as executor:
-            handles = {}
-            if self.control:
-                control_handle = executor.submit(
-                    Connect.init_process, self.control, poll_interval=poll_interval
-                )
-                handles[control_handle] = "control"
-            program_handle = executor.submit(
-                Connect.init_process, self.main, poll_interval=poll_interval
+        processes = []
+        if self.control:
+            control_handle = Process(
+                target=self.control.run, kwargs={"poll_interval": poll_interval}
             )
-            handles[program_handle] = "main"
-
-            control_recv_handle = executor.submit(
-                self.recv_control, poll_interval=poll_interval
+            processes.append(control_handle)
+            program_handle = Process(
+                target=self.main.run, kwargs={"poll_interval": poll_interval}
             )
+            processes.append(program_handle)
 
-            handles[control_recv_handle] = "recv_control"
+        control_recv_handle = Process(
+            target=self.recv_control, kwargs={"poll_interval": poll_interval}
+        )
+        processes.append(control_recv_handle)
 
-            for future in concurrent.futures.as_completed(handles):
-                logging.info(
-                    "[NODE]",
-                    f"Node {self.name}.{self.seq} {handles[future]} is completed",
-                )
+        for process in processes:
+            process.start()
+        for (i, process) in enumerate(processes):
+            res = process.join()
+            logging.info(f"[NOD] Node {self.name}.{self.seq} has joined: {i} {res}")
 
     def recv_control(self, *, poll_interval: float = 0.1):
         """Receive control command from Control program
@@ -325,6 +340,7 @@ class NodeGroup:
 
     def __init__(
         self,
+        network: Network,
         name: NodeGroupId,
         *,
         main: Type[P] | None = None,
@@ -334,16 +350,17 @@ class NodeGroup:
         """Initialize the node.
 
         Args:
-            cls (Type): A Middleware derived class type.
+            network (Network): A network
             name (NodeGroupId): Name for this node group.
             program (Type[P], optional): Main program for the Nodes in this NodeGroup. Defaults to QueueProgram.
             control (Type[P], optional): Control program for the nodes in this NodeGroup. Defaults to ControlProgram.
             count (int, optional): Number of nodes to instantiate in this NodeGroup. Defaults to 1.
         """
+        self.network = network
         self.name = name
         self.count = scale
         self.nodes = [
-            Node(self.name, (seq, scale), main=main, control=control)
+            Node(self.network, self.name, (seq, scale), main=main, control=control)
             for seq in range(scale)
         ]
 
@@ -445,16 +462,15 @@ class NodeGroup:
         Args:
             poll_interval (float): Poll interval of the running Nodes
         """
-        with ProcessPoolExecutor(max_workers=len(self.nodes)) as executor:
-            node_handles = {
-                executor.submit(node.run, poll_interval=poll_interval): i
-                for i, node in enumerate(self.nodes)
-            }
-
-            for future in concurrent.futures.as_completed(node_handles):
-                logging.info(
-                    "[NODG]", f"Node {self.name}.{node_handles[future]} has joined"
-                )
+        processes = [
+            Process(target=node.run, kwargs={"poll_interval": poll_interval})
+            for node in self.nodes
+        ]
+        for process in processes:
+            process.start()
+        for (i, process) in enumerate(processes):
+            res = process.join()
+            logging.info(f"[NODG] Node {self.name}.{i} has joined: {res}")
 
     def terminate(self):
         """Terminate all the nodes in this NodeGroup"""
@@ -468,13 +484,14 @@ class NodeGroup:
 class Topology:
     """A top level class to construct the underlying topology and deploy."""
 
-    def __init__(self, name: TopologyId):
+    def __init__(self, network: Network, name: TopologyId):
         """Initialize the Topology class.
 
         Args:
-            cls (Type): A Middleware derived class type.
+            network (Network): A network
             name (TopologyId): Name for this Topolgy
         """
+        self.network = network
         self.name: TopologyId = name
         self.node_groups: Dict[NodeGroupId, NodeGroup] = {}
         self.queues: Dict[NodeId, NodeGroup] = {}
@@ -499,6 +516,7 @@ class Topology:
             NodeGroup: Created NodeGroup
         """
         node_group = NodeGroup(
+            self.network,
             name,
             main=main,
             control=control,
@@ -513,7 +531,7 @@ class Topology:
         Returns:
             NodeGroup: Created Queue
         """
-        queue = NodeGroup(name)
+        queue = NodeGroup(self.network, name)
         self.queues[name] = queue
         return queue
 
@@ -523,32 +541,38 @@ class Topology:
         Args:
             poll_interval (float, optional): Poll interval for the deployed processes. Defaults to 0.2.
         """
-        with ProcessPoolExecutor(len(self.node_groups) + len(self.queues)) as executor:
-            queue_handles = {
-                executor.submit(queue.run, poll_interval=poll_interval): queue_name
-                for (queue_name, queue) in self.queues.items()
-            }
-            node_handles = {
-                executor.submit(
-                    node_group.run, poll_interval=poll_interval
-                ): node_group_name
-                for (node_group_name, node_group) in self.node_groups.items()
-            }
+        queue_handles = {
+            Process(
+                target=queue.run, kwargs={"poll_interval": poll_interval}
+            ): queue_name
+            for (queue_name, queue) in self.queues.items()
+        }
+        node_handles = {
+            Process(
+                target=node_group.run, kwargs={"poll_interval": poll_interval}
+            ): node_group_name
+            for (node_group_name, node_group) in self.node_groups.items()
+        }
 
-            for future in concurrent.futures.as_completed(node_handles):
-                future.result()
-                logging.info(
-                    "[SYST]", f"Node group '{node_handles[future]}' is completed"
-                )
+        for p in queue_handles:
+            p.start()
 
-            for node in self.node_groups.values():
-                node.terminate()
+        for p in node_handles:
+            p.start()
 
-            for queue in self.queues.values():
-                queue.terminate()
+        for p in node_handles:
+            logging.info(
+                f"[SYST] Node group '{node_handles[p]}' is completed : {p.join()}"
+            )
 
-            for future in concurrent.futures.as_completed(queue_handles):
-                logging.info("[SYST]", f"Queue '{queue_handles[future]}' is completed")
+        for node in self.node_groups.values():
+            node.terminate()
+
+        for queue in self.queues.values():
+            queue.terminate()
+
+        for p in queue_handles:
+            logging.info(f"[SYST] Queue '{queue_handles[p]}' is completed : {p.join()}")
 
     def __repr__(self):
         return json.dumps(self, cls=DeployEncoder, indent=2)
